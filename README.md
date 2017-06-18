@@ -1,3 +1,7 @@
+###### Git Mantras:
+:octocat: says, "Commit early, commit often."
+:octocat: says, "Branches are cheap."
+
 # Git Playground
 
 This repository is used to practice git commands.  Feel free to experiment, and don't worry about breaking things.  That's what this repo's for!
@@ -169,3 +173,27 @@ Rebase current branch onto master
 ```
 git rebase master
 ```
+
+## What is HEAD?
+HEAD is the symbolic name for the currently checkout commit.
+
+## Detaching HEAD:
+Detaching HEAD just means attaching it to a commit instead of a branch (remember: a branch is just a pointer to a commit).
+
+## How do you move around in the source tree?
+You can make a branch point to any commit using the following command:
+```
+git branch -f <source> <destination>
+```
+
+## What is Git Cherry-pick?
+It let's you copy a series of commits below your current location (HEAD).
+
+# Cherry-pick Example:
+Let's say you have commits A_hash, B_hash and C_hash in branches A, B and C, respectively.  And let's say you want to combine the three commits into a new D branch.
+You can do so using the following command:
+```
+git checkout -b D
+git cherry-pick A_hash B_hash C_hash
+```
+

@@ -125,10 +125,10 @@ git merge master
 ```
 
 Here's a tip:
+Merge master onto current branch
 ```
 git merge master
 ```
-Merge master onto current branch
 
 ### Git Rebase:
 Let's create a new branch called bugFix branch ...
@@ -165,7 +165,7 @@ git rebase bugFix
 ```
 
 Here's a tip:
+Rebase current branch onto master
 ```
 git rebase master
 ```
-Rebase current branch onto master

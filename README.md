@@ -247,7 +247,7 @@ git branch -f <source> <destination>
 ## What is Git Cherry-pick?
 It let's you copy a series of commits below your current location (HEAD).
 
-# Cherry-pick Example
+## Cherry-pick Example
 Let's say you have commits A_hash, B_hash and C_hash in branches A, B and C, respectively.   And let's say you want to combine the three commits into a new D branch.  
 You can do so using the following command:
 ```

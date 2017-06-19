@@ -6,7 +6,7 @@
 
 #### Useful Links
 http://learngitbranching.js.org  
-https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud  
+https://www.atlassian.com/git/tutorials/what-is-version-control
 https://www.youtube.com/watch?v=3a2x1iJFJWc (high-level overview of a Git Workflow)
 
 # Git Playground
@@ -116,6 +116,14 @@ There are two methods: merge and rebase.
 Merging creates a special commit that has two unique parents.  Merging essentially converges two branches into a single branch.  
 Rebasing copies a sequence of commits and places them on top of another commit.  This gives it a sequential look (rebase) instead of a divergent/convergent look (merge).
 
+Rebasing makes your commit tree look very clean since everything is in a straight line.  
+But it also modifies the history of the commit tree.
+
+Merging preserves history.  
+But it can also make your commit tree look very complex, and confusing.
+
+Choosing whether to rebase or merge is left to the developer's preference.
+
 ## Git Merge
 Let's create a new branch called hotFix.
 ```
@@ -208,6 +216,20 @@ Think: The ordering of arguments for rebase is the "opposite" of merge
 git merge SOURCE
 git rebase DESTINATION
 git rebase DESTINATION SOURCE
+```
+
+## Git Merge and Rebase
+Remembering how to merge and rebase may be difficult at first, but practice makes perfect.  
+And this tip will help you remember how to use git merge and rebase:
+
+Merge A "into" current branch  
+```
+git merge A
+```
+Rebase current branch "onto" A
+
+```
+git rebase A
 ```
 
 ## What is HEAD?

@@ -197,3 +197,34 @@ git checkout -b D
 git cherry-pick A_hash B_hash C_hash
 ```
 
+## How do you undo your last commit?
+If you want to discard these changes, use the following command:
+```
+git reset --hard HEAD~1
+```
+But if you want to keep these staged changes, use the --soft flag:
+```
+git reset --soft HEAD~1
+```
+Then, if you want to unstage these change, use the following command:
+```
+git reset HEAD
+```
+But let's say you want to completely scrap the last three commits.
+You can do so by doing a reset to HEAD~4 (or to that particular SHA-1):
+```
+git reset --hard HEAD~4
+```
+
+## What are tags?
+Branches are cool and all, but they're essentially just pointers.
+And because pointers are mutable (meaning that they may not consistently point to the same place), we need a way to permanently mark historical points in our project's history.
+
+Tags can be used to mark certain commits as "milestones" that you can then reference like a branch.
+
+Let's say you want to mark your last commit as VERSION_1.  Just use the following command:
+```
+git tag VERSION_1 HEAD
+```
+
+

@@ -104,10 +104,11 @@ HEAD is the ref (reference, or symbolic name) for the commit that's currently ch
 You can think of it as a pointer to a commit.
 
 ## Detaching HEAD
-Detaching HEAD just means attaching it to a commit instead of a branch (remember: a branch is just a pointer to a commit).  
+Detaching HEAD just means attaching it to a commit instead of a branch.  
 
 ## What are branches?
 Branches are just pointers to specific commits.  
+Remember: HEAD is also just a pointer to a commit.  
   
 When a branch points to a particular commit, it will include the commit itself plus all of it's parent commits (or ancestors).  
 The default branch name in Git is: master.

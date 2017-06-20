@@ -8,6 +8,7 @@
 http://learngitbranching.js.org  
 https://www.atlassian.com/git/tutorials/what-is-version-control
 https://www.youtube.com/watch?v=3a2x1iJFJWc (high-level overview of a Git Workflow)
+https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/
 
 # Git Playground
 

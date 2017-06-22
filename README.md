@@ -4,13 +4,15 @@
 :octocat: says, "Commit early, commit often."  
 :octocat: says, "Branch early, branch often."  
 :octocat: says, "Branches are cheap."
+:octocat: says, "When in doubt, revert."
 
+  
 #### Useful Links
 http://learngitbranching.js.org  
-https://www.atlassian.com/git/tutorials/what-is-version-control
-http://csci221.artifice.cc/lecture/collaboration-with-git.html
+https://www.atlassian.com/git/tutorials/what-is-version-control  
+http://csci221.artifice.cc/lecture/collaboration-with-git.html  
 https://www.youtube.com/watch?v=3a2x1iJFJWc (high-level overview of a Git Workflow)  
-https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/
+https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/  
 
 # Git Playground
 This repository is used to practice git commands.  Feel free to experiment, and don't worry about breaking things.  
@@ -98,12 +100,10 @@ Alternatively, if you want to undo the commit and keep the staged changes, do:
 $ git reset --soft HEAD^
 ```
 
-## Well, that was really confusing ... would you PLEASE throw me a bone?!
-<!---
-![Git Stages](https://ducquoc.files.wordpress.com/2013/08/git_data_transport_new.png?w=640)
---->
-<img align="center" src="https://ducquoc.files.wordpress.com/2013/08/git_data_transport_new.png?w=640" alt="Git Stages">
+## Well, that was really confusing ... would you PLEASE throw me a bone?!  
 
+![Git Stages](https://ducquoc.files.wordpress.com/2013/08/git_data_transport_new.png?w=640)
+  
 ## I changed my mind. How do I redo the last commit?
 ```
 $ git reset HEAD@{1}
@@ -222,6 +222,25 @@ To create a new branch & check it out at the same time, use the following comman
 ```
 $ git checkout -b test
 Switched to a new branch 'test'
+```
+
+##### :octocat: says, "Here's a tip":
+To list all branches including remote branches, use the following command:
+```
+git branch -a
+  bar
+  dev
+  foo
+* master
+  new_feature
+  test
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/bar
+  remotes/origin/dev
+  remotes/origin/foo
+  remotes/origin/master
+  remotes/origin/new_feature
+  remotes/origin/test
 ```
 
 ##### :octocat: says, "Here's a tip":
@@ -363,7 +382,7 @@ $ git rebase DESTINATION
 $ git rebase DESTINATION SOURCE
 ```
 
-## Git Merge and Rebase
+## Git Merge and Rebase Tips
 Remembering how to merge and rebase may be difficult at first, but practice makes perfect.  
 And the following tips will help you remember how to use git merge and rebase:
 
@@ -390,18 +409,18 @@ There are two primary ways to undo changes in Git: reset and revert.
 Bottom line: git revert is the "safe" way to undo changes; git reset is the dangerous method.  
 This is because git revert maintains history whereas git reset modifies history.  
   
-##### :octocat: says, "Here's a tip":
-When in doubt, revert!
-
 Git Reset Example:
 ```
-
+$ git reset --soft HEAD^
 ```
 
 Git Revert Example:
 ```
-
+$ git revert HEAD
 ```
+
+##### :octocat: says, "Here's a tip":
+When in doubt, revert!
 
 ## What is Git Cherry-Pick?
 It let's you copy a series of commits, and paste them below your current location (HEAD).
@@ -460,6 +479,48 @@ Delta encoding is a way of storing or transmitting data in the form of differenc
 Delta encoding is sometimes called delta compression, particularly where archival histories of changes are required (e.g., in revision control software).  
   
 The differences are recorded in discrete files called "deltas" or "diffs". In situations where differences are small – for example, the change of a few words in a large document or the change of a few records in a large table – delta encoding greatly reduces data redundancy. Collections of unique deltas are substantially more space-efficient than their non-encoded equivalents.
+
+## Here are some cool git commands:
+Display the commit history.
+```
+git log --oneline --decorate --all --graph
+```
+
+Allows you to review each of the changes you made, and then decide what to stage/unstage.
+```
+git add -p
+git reset -p
+```
+
+Messed up your merge/rebase? ABORT!
+```
+git merge --abort
+git rebase --abort
+```
+
+Forgot to add a little something in your last commit?  Use:
+```
+git commit --amend --no-edit
+```
+
+Consider making your first commit an empty commit.  
+(now you can rebase your "first" commit)
+```
+git init myNewProject
+git commit -m "initial commit" --allow-empty
+```
+
+Want to stash all file in your working tree?  
+(stash ignored, untracked, and tracked files):
+```
+git stash --all
+```
+
+Want to get the gist of git status?  Use:
+```
+git status --short --branch
+```
+
 
 
 

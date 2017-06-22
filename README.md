@@ -545,6 +545,12 @@ Want to change your remote's URL?  Use:
 git remote set-url origin https://username@hostname/username/repository.git
 ```
 
+How can you setup a new remote branch locally?  
+```
+git branch -a
+git checkout --track origin/new_branch
+```
+
 ## My Git Script
 I use this bash script to load my aliases on an unfamiliar system.
 ```

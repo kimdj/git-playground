@@ -255,7 +255,6 @@ git branch -a
   remotes/origin/master
   remotes/origin/new_feature
   remotes/origin/test
-
 ```
 
 ##### :octocat: says, "Here's a tip":
@@ -544,6 +543,37 @@ git remote -v
 Want to change your remote's URL?  Use:
 ```
 git remote set-url origin https://username@hostname/username/repository.git
+```
+
+## My Git Script
+I use this bash script to load my aliases on an unfamiliar system.
+```
+#!/bin/bash
+# Copyright (C) 2017 David Kim - All Rights Reserved
+# Permission to copy and modify is granted under the MIT License.
+# Last revised 6/21/2017
+#
+# Import/Remove my git aliases
+
+if [ $# -eq 0 ]; then  # case: no arg exists
+
+        # import my git aliases
+
+        alias git-init='git init; git commit -m "initial commit" --allow-empty'
+        alias git-log='git log --oneline --decorate --all --graph'
+        alias git-status='git status --short --branch'
+        alias git-push='git push --force-with-lease'
+
+else  # case: an arg exists
+
+        # remove my git aliases
+
+        unalias git-init
+        unalias git-log
+        unalias git-status
+        unalias git-push
+
+fi
 ```
 
 ###### Btw ... who created :octocat: (otherwise known as "octocat")?

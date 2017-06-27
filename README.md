@@ -13,6 +13,7 @@ https://www.atlassian.com/git/tutorials/what-is-version-control
 http://csci221.artifice.cc/lecture/collaboration-with-git.html  
 https://www.youtube.com/watch?v=3a2x1iJFJWc (high-level overview of a Git Workflow)  
 https://www.derekgourlay.com/blog/git-when-to-merge-vs-when-to-rebase/  
+https://www.youtube.com/watch?v=4EOZvow1mk4  
 
 # Git Playground
 This repository is used to practice git commands.  Feel free to experiment, and don't worry about breaking things.  
@@ -503,6 +504,49 @@ Forgot to add a little something in your last commit?  Use:
 ```
 git commit --amend --no-edit
 ```
+
+## I'm completely lost.  What do I need to know?
+Download the repo.
+```
+git clone URL
+```
+
+Checkout a feature branch, or create a new working branch.
+```
+git checkout BRANCH
+git checkout -b MY_BRANCH
+```
+
+Edit some files.  
+  
+Commit your changes.
+```
+git commit -m "commit message"
+```
+
+Push your changes to the repo.
+```
+git push
+git push origin BRANCH:BRANCH
+```
+
+Pull any changes from the repo.
+```
+git pull
+git pull origin BRANCH:BRANCH
+```
+
+## Who screwed up this file?
+Use git blame to find the commit:
+```
+git blame file.py
+```
+
+Then, look up the commit message.
+```
+git show 37b8
+```
+
 
 
 

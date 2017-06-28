@@ -493,6 +493,8 @@ Note: Order matters.
 
   <!------------------------------------------------------------------------------------>
 
+  <!------------------------------------------------------------------------------------>
+
 ## What are tags?
 Branches are cool and all, but they're essentially just pointers.  
 And because pointers are mutable (meaning that they may not consistently point to the same place), we need a way to permanently mark historical points in our project's history.  
@@ -518,7 +520,6 @@ How do you pull tags from the remote repo?
 ```
 $ git pull --tags
 ```
-
   <!------------------------------------------------------------------------------------>
 
 ## What is a delta?

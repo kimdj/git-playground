@@ -149,6 +149,32 @@ Then, do a hard reset to that particular commit.
 $ git reset --hard HEAD@{1}
 ```
 
+##### :octocat: says, "Here's a tip":
+If you want to write a long commit message, make sure to include a blank line between the first line (short message) and the rest of the commit message.  
+This way, git log --oneline will only show the first line of the commit message.
+```
+this is the short, oneline message
+
+this is the rest of the long commit message
+blah blah blah
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Thu Jul 6 18:26:43 2017 -0700
+#
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#       modified:   README.md
+#       new file:   blah.txt
+#       modified:   git-alias.sh
+#
+
+```
+
   <!------------------------------------------------------------------------------------>
 
 ## What is HEAD?
@@ -562,6 +588,7 @@ $ git log --oneline --decorate --all --graph
 | |/  
 :
 ```
+Extra: $ git log --graph --decorate --all
 
 How do you stage/unstage changes incrementally?
 ```

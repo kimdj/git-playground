@@ -10,7 +10,7 @@ if [ $# -eq 0 ]; then  # case: no arg exists
         # import my git aliases
 
         alias git-init='git init; git commit -m "initial commit" --allow-empty'
-        alias git-log='git log --oneline --decorate --all --graph'
+        alias git-log='git log --decorate --all --graph'
         alias git-status='git status --short --branch'
         alias git-push='git push --force-with-lease'
 

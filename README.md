@@ -647,6 +647,11 @@ From https://github.com/kimdj/git-playground
  - [deleted]         (none)     -> origin/bingo
 ```
 
+## How can I clone a remote repository that's not GitHub or BitBucket?
+```
+$ git clone git+ssh://foo@bar.com/~/repo
+```
+
 ## Who screwed up this file?
 Use git blame to find the commit:
 ```

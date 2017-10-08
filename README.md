@@ -156,7 +156,7 @@ This way, git log --oneline will only show the first line of the commit message.
 this is the short, oneline message
 
 this is the rest of the long commit message
-blah blah blah blah blah
+blah blah blah
 
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
